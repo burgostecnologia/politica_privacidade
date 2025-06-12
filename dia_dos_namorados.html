@@ -5,80 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bebê & Cacá</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      background: url('https://burgostecnologia.github.io/politica_privacidade/fundo.jpg') repeat center center fixed;
-      background-size: contain;
+      background: url('https://burgostecnologia.github.io/politica_privacidade/fundo.jpg') no-repeat center center fixed;
+      background-size: cover;
       text-align: center;
       color: white;
     }
 
     h1 {
       margin-top: 20px;
+      margin-bottom: 5px;
       font-size: 2em;
       color: white;
       text-shadow: 2px 2px 4px #000;
     }
 
-    .carousel-3d-container {
-      perspective: 1000px;
-      width: 100%;
-      height: 300px;
-      margin: 30px 0;
+    .slideshow-container {
       position: relative;
+      width: 300px;
+      height: 400px;
+      margin: 5px auto 10px;
       overflow: hidden;
     }
 
-    .carousel-3d {
+    .slideshow-container img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
       height: 100%;
-      position: absolute;
-      transform-style: preserve-3d;
-      animation: rotate 20s infinite linear;
-    }
-
-    .carousel-3d img {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform-origin: center center -400px;
-      width: 250px;
-      height: auto;
+      object-fit: cover;
       border-radius: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
 
-    .carousel-3d img:nth-child(1) {
-      transform: rotateY(0deg) translateZ(400px);
-    }
-
-    .carousel-3d img:nth-child(2) {
-      transform: rotateY(120deg) translateZ(400px);
-    }
-
-    .carousel-3d img:nth-child(3) {
-      transform: rotateY(240deg) translateZ(400px);
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotateY(0deg);
-      }
-      to {
-        transform: rotateY(360deg);
-      }
+    .slideshow-container img.active {
+      opacity: 1;
     }
 
     .counter {
-      margin-top: 30px;
+      margin-top: 10px;
       font-size: 1.2em;
       color: white;
       text-shadow: 1px 1px 3px #000;
     }
 
     .message {
-      margin: 30px 20px;
+      margin: 15px 20px 20px;
       font-size: 1.1em;
       font-style: italic;
       white-space: pre-line;
@@ -87,7 +70,8 @@
     }
 
     audio {
-      display: none;
+      display: block;
+      margin: 20px auto;
     }
   </style>
 </head>
@@ -95,44 +79,58 @@
 
   <h1>Bebê & Cacá</h1>
 
-  <div class="carousel-3d-container">
-    <div class="carousel-3d" id="carousel3d">
-      <img src="https://burgostecnologia.github.io/politica_privacidade/f4.jpg" alt="Foto 1">
-      <img src="https://burgostecnologia.github.io/politica_privacidade/f2.jpg" alt="Foto 2">
-      <img src="https://burgostecnologia.github.io/politica_privacidade/f3.jpg" alt="Foto 3">
-    </div>
+  <div class="slideshow-container" id="slideshow">
+    <img src="https://burgostecnologia.github.io/politica_privacidade/f4.jpg" class="active" alt="Foto 1">
+    <img src="https://burgostecnologia.github.io/politica_privacidade/f2.jpg" alt="Foto 2">
+    <img src="https://burgostecnologia.github.io/politica_privacidade/f3.jpg" alt="Foto 3">
+    <img src="https://burgostecnologia.github.io/politica_privacidade/f5.jpg" alt="Foto 4">
+    <img src="https://burgostecnologia.github.io/politica_privacidade/f6.jpg" alt="Foto 5">
+    <img src="https://burgostecnologia.github.io/politica_privacidade/f7.jpg" alt="Foto 6">
+    <img src="https://burgostecnologia.github.io/politica_privacidade/f8.jpg" alt="Foto 7">
+    <img src="https://burgostecnologia.github.io/politica_privacidade/f9.jpg" alt="Foto 8">
+    <img src="https://burgostecnologia.github.io/politica_privacidade/f10.jpg" alt="Foto 9">
+
   </div>
 
   <div class="counter" id="timer"></div>
-
+  <audio id="bg-music" autoplay loop controls>
+    <source src="https://burgostecnologia.github.io/politica_privacidade/audio.mp3" type="audio/mpeg">
+    Seu navegador não suporta o player de áudio.
+  </audio>
   <div class="message">
-    Hoje celebramos não apenas o Dia dos Namorados, mas também a linda história que construímos juntos.
+    💕Hoje celebramos não apenas o Dia dos Namorados, mas também a linda história que construímos juntos.
     Foram 19 anos de amor, de descobertas, de crescer lado a lado – começando como namorados, sonhando juntos, e hoje vivendo o que antes parecia tão distante: um casamento feliz, sólido, cheio de carinho e respeito.
 
     Cada riso, cada lágrima, cada desafio superado... tudo fez de nós o que somos hoje.
-    Se somos tão bem casados é porque nossa base sempre foi feita de amor verdadeiro, amizade sincera e muita cumplicidade.
-
+    
     Que venham muitos outros anos, cheios de amor, de mãos dadas, coração com coração.
+    
     Porque com você, cada dia é um presente. Te amo infinitamente. 💕
     
     Beijos do seu eterno Bebê.
   </div>
 
-  <audio id="bg-music" autoplay loop>
-    <source src="https://burgostecnologia.github.io/politica_privacidade/audio.mp3" type="audio/mpeg">
-    Seu navegador não suporta o player de áudio.
-  </audio>
+
 
   <script>
-    // Música com autoplay (precisa de interação em alguns navegadores)
+    // Tentativa de tocar a música automaticamente
     window.addEventListener('load', () => {
       const music = document.getElementById('bg-music');
-      music.play().catch(() => {
-        document.body.addEventListener('click', () => music.play(), { once: true });
-      });
+      const tryPlay = () => {
+        music.play().then(() => {
+          console.log('Música tocando automaticamente!');
+        }).catch((e) => {
+          console.warn('Autoplay bloqueado. Tentando novamente no clique do usuário.');
+        });
+      };
+
+      tryPlay();
+
+      // Garante que será tocado no primeiro clique
+      document.body.addEventListener('click', tryPlay, { once: true });
     });
 
-    // Contador de tempo juntos
+    // Timer
     const startDate = new Date("2005-10-02T00:00:00");
     const timerElement = document.getElementById("timer");
 
@@ -156,6 +154,16 @@
 
     setInterval(updateTimer, 1000);
     updateTimer();
+
+    // Slideshow
+    const images = document.querySelectorAll('#slideshow img');
+    let current = 0;
+
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 3000);
   </script>
 </body>
 </html>
